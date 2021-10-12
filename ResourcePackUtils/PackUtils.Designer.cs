@@ -48,28 +48,44 @@ namespace ResourcePackUtils
             this.rpLocPath = new System.Windows.Forms.Label();
             this.locatedLabel = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.includeRealms = new System.Windows.Forms.CheckBox();
+            this.includeRealmsMT = new System.Windows.Forms.CheckBox();
             this.missingTextures = new System.Windows.Forms.Label();
             this.mtExportButton = new System.Windows.Forms.Button();
             this.mtSearchButton = new System.Windows.Forms.Button();
             this.missingLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
             this.totalStats = new System.Windows.Forms.Label();
-            this.missingTexturesTab = new System.Windows.Forms.TabPage();
-            this.missingTexturesTextBox = new System.Windows.Forms.RichTextBox();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.unusedTexturesTab = new System.Windows.Forms.TabPage();
             this.unusedLabel = new System.Windows.Forms.Label();
             this.includeRealmsUT = new System.Windows.Forms.CheckBox();
             this.unusedStats = new System.Windows.Forms.Label();
             this.exportButtonUT = new System.Windows.Forms.Button();
             this.searchButtonUT = new System.Windows.Forms.Button();
+            this.compStatsLabel = new System.Windows.Forms.Label();
+            this.compressBasicStats = new System.Windows.Forms.Label();
+            this.compressButton = new System.Windows.Forms.Button();
+            this.compConfLabel = new System.Windows.Forms.Label();
+            this.threadCount = new System.Windows.Forms.NumericUpDown();
+            this.threadLabel = new System.Windows.Forms.Label();
+            this.compLevel = new System.Windows.Forms.NumericUpDown();
+            this.compLevelLabel = new System.Windows.Forms.Label();
+            this.fileSizeSaveLabel = new System.Windows.Forms.Label();
+            this.threadStatsLabel = new System.Windows.Forms.Label();
+            this.missingTexturesTab = new System.Windows.Forms.TabPage();
+            this.missingTexturesTextBox = new System.Windows.Forms.RichTextBox();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.unusedTexturesTab = new System.Windows.Forms.TabPage();
             this.unusedTexturesTextBox = new System.Windows.Forms.RichTextBox();
+            this.compressionTab = new System.Windows.Forms.TabPage();
+            this.compressTextBox = new System.Windows.Forms.RichTextBox();
+            this.exportFileListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.threadCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLevel)).BeginInit();
             this.missingTexturesTab.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.unusedTexturesTab.SuspendLayout();
+            this.compressionTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -86,7 +102,8 @@ namespace ResourcePackUtils
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.Enabled = false;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportFileListToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -234,18 +251,18 @@ namespace ResourcePackUtils
             this.locatedLabel.Text = "Not Located!";
             this.locatedLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // includeRealms
+            // includeRealmsMT
             // 
-            this.includeRealms.AutoSize = true;
-            this.includeRealms.Checked = true;
-            this.includeRealms.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.includeRealms.Location = new System.Drawing.Point(417, 170);
-            this.includeRealms.Name = "includeRealms";
-            this.includeRealms.Size = new System.Drawing.Size(99, 17);
-            this.includeRealms.TabIndex = 5;
-            this.includeRealms.Text = "Include Realms";
-            this.toolTip.SetToolTip(this.includeRealms, "Whether the realms textures should be checked");
-            this.includeRealms.UseVisualStyleBackColor = true;
+            this.includeRealmsMT.AutoSize = true;
+            this.includeRealmsMT.Checked = true;
+            this.includeRealmsMT.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.includeRealmsMT.Location = new System.Drawing.Point(417, 170);
+            this.includeRealmsMT.Name = "includeRealmsMT";
+            this.includeRealmsMT.Size = new System.Drawing.Size(99, 17);
+            this.includeRealmsMT.TabIndex = 5;
+            this.includeRealmsMT.Text = "Include Realms";
+            this.toolTip.SetToolTip(this.includeRealmsMT, "Whether the realms textures should be checked");
+            this.includeRealmsMT.UseVisualStyleBackColor = true;
             // 
             // missingTextures
             // 
@@ -308,62 +325,6 @@ namespace ResourcePackUtils
             this.totalStats.Text = "Items: 0/0\r\nBlocks: 0/0\r\nTotal: 0/0\r\n";
             this.toolTip.SetToolTip(this.totalStats, "Number of textures within the resourcepack, and how many should exist");
             // 
-            // missingTexturesTab
-            // 
-            this.missingTexturesTab.Controls.Add(this.totalLabel);
-            this.missingTexturesTab.Controls.Add(this.totalStats);
-            this.missingTexturesTab.Controls.Add(this.missingLabel);
-            this.missingTexturesTab.Controls.Add(this.includeRealms);
-            this.missingTexturesTab.Controls.Add(this.missingTextures);
-            this.missingTexturesTab.Controls.Add(this.mtExportButton);
-            this.missingTexturesTab.Controls.Add(this.mtSearchButton);
-            this.missingTexturesTab.Controls.Add(this.missingTexturesTextBox);
-            this.missingTexturesTab.Location = new System.Drawing.Point(4, 22);
-            this.missingTexturesTab.Name = "missingTexturesTab";
-            this.missingTexturesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.missingTexturesTab.Size = new System.Drawing.Size(516, 256);
-            this.missingTexturesTab.TabIndex = 0;
-            this.missingTexturesTab.Text = "Missing Textures";
-            this.missingTexturesTab.UseVisualStyleBackColor = true;
-            // 
-            // missingTexturesTextBox
-            // 
-            this.missingTexturesTextBox.Location = new System.Drawing.Point(0, 0);
-            this.missingTexturesTextBox.Name = "missingTexturesTextBox";
-            this.missingTexturesTextBox.ReadOnly = true;
-            this.missingTexturesTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.missingTexturesTextBox.Size = new System.Drawing.Size(413, 256);
-            this.missingTexturesTextBox.TabIndex = 1;
-            this.missingTexturesTextBox.Text = "";
-            // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.missingTexturesTab);
-            this.tabControl.Controls.Add(this.unusedTexturesTab);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Enabled = false;
-            this.tabControl.Location = new System.Drawing.Point(0, 99);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(524, 282);
-            this.tabControl.TabIndex = 3;
-            // 
-            // unusedTexturesTab
-            // 
-            this.unusedTexturesTab.Controls.Add(this.unusedLabel);
-            this.unusedTexturesTab.Controls.Add(this.includeRealmsUT);
-            this.unusedTexturesTab.Controls.Add(this.unusedStats);
-            this.unusedTexturesTab.Controls.Add(this.exportButtonUT);
-            this.unusedTexturesTab.Controls.Add(this.searchButtonUT);
-            this.unusedTexturesTab.Controls.Add(this.unusedTexturesTextBox);
-            this.unusedTexturesTab.Location = new System.Drawing.Point(4, 22);
-            this.unusedTexturesTab.Name = "unusedTexturesTab";
-            this.unusedTexturesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.unusedTexturesTab.Size = new System.Drawing.Size(516, 256);
-            this.unusedTexturesTab.TabIndex = 1;
-            this.unusedTexturesTab.Text = "Unused Textures";
-            this.unusedTexturesTab.UseVisualStyleBackColor = true;
-            // 
             // unusedLabel
             // 
             this.unusedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -419,6 +380,189 @@ namespace ResourcePackUtils
             this.searchButtonUT.UseVisualStyleBackColor = true;
             this.searchButtonUT.Click += new System.EventHandler(this.searchButtonUT_Click);
             // 
+            // compStatsLabel
+            // 
+            this.compStatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compStatsLabel.Location = new System.Drawing.Point(419, 3);
+            this.compStatsLabel.Name = "compStatsLabel";
+            this.compStatsLabel.Size = new System.Drawing.Size(91, 23);
+            this.compStatsLabel.TabIndex = 16;
+            this.compStatsLabel.Text = "Stats";
+            this.toolTip.SetToolTip(this.compStatsLabel, "Number of textures missing from the resourcepack");
+            // 
+            // compressBasicStats
+            // 
+            this.compressBasicStats.Location = new System.Drawing.Point(422, 26);
+            this.compressBasicStats.Name = "compressBasicStats";
+            this.compressBasicStats.Size = new System.Drawing.Size(91, 19);
+            this.compressBasicStats.TabIndex = 15;
+            this.compressBasicStats.Text = "Total: 0/0";
+            this.toolTip.SetToolTip(this.compressBasicStats, "Number of textures compressed");
+            // 
+            // compressButton
+            // 
+            this.compressButton.Location = new System.Drawing.Point(419, 222);
+            this.compressButton.Name = "compressButton";
+            this.compressButton.Size = new System.Drawing.Size(91, 23);
+            this.compressButton.TabIndex = 14;
+            this.compressButton.Text = "Compress";
+            this.toolTip.SetToolTip(this.compressButton, "Compress all textures within the resourcepack");
+            this.compressButton.UseVisualStyleBackColor = true;
+            this.compressButton.Click += new System.EventHandler(this.compressButton_Click);
+            // 
+            // compConfLabel
+            // 
+            this.compConfLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compConfLabel.Location = new System.Drawing.Point(419, 89);
+            this.compConfLabel.Name = "compConfLabel";
+            this.compConfLabel.Size = new System.Drawing.Size(91, 23);
+            this.compConfLabel.TabIndex = 19;
+            this.compConfLabel.Text = "Config";
+            this.toolTip.SetToolTip(this.compConfLabel, "Configuration for compression");
+            // 
+            // threadCount
+            // 
+            this.threadCount.Location = new System.Drawing.Point(473, 112);
+            this.threadCount.Maximum = new decimal(new int[] {
+            256,
+            0,
+            0,
+            0});
+            this.threadCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.threadCount.Name = "threadCount";
+            this.threadCount.Size = new System.Drawing.Size(37, 20);
+            this.threadCount.TabIndex = 18;
+            this.toolTip.SetToolTip(this.threadCount, "Number of threads to use for compression");
+            this.threadCount.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // threadLabel
+            // 
+            this.threadLabel.AutoSize = true;
+            this.threadLabel.Location = new System.Drawing.Point(422, 114);
+            this.threadLabel.Name = "threadLabel";
+            this.threadLabel.Size = new System.Drawing.Size(49, 13);
+            this.threadLabel.TabIndex = 17;
+            this.threadLabel.Text = "Threads:";
+            this.toolTip.SetToolTip(this.threadLabel, "Number of threads to use for compression");
+            // 
+            // compLevel
+            // 
+            this.compLevel.Location = new System.Drawing.Point(473, 138);
+            this.compLevel.Maximum = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            this.compLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.compLevel.Name = "compLevel";
+            this.compLevel.Size = new System.Drawing.Size(37, 20);
+            this.compLevel.TabIndex = 20;
+            this.toolTip.SetToolTip(this.compLevel, "Compression level (0-7), higher values will take longer, but will reduce the file" +
+        "size more.");
+            this.compLevel.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            // 
+            // compLevelLabel
+            // 
+            this.compLevelLabel.AutoSize = true;
+            this.compLevelLabel.Location = new System.Drawing.Point(424, 140);
+            this.compLevelLabel.Name = "compLevelLabel";
+            this.compLevelLabel.Size = new System.Drawing.Size(36, 13);
+            this.compLevelLabel.TabIndex = 21;
+            this.compLevelLabel.Text = "Level:";
+            this.toolTip.SetToolTip(this.compLevelLabel, "Compression level (0-7), higher values will take longer, but will reduce the file" +
+        "size more.");
+            // 
+            // fileSizeSaveLabel
+            // 
+            this.fileSizeSaveLabel.Location = new System.Drawing.Point(422, 45);
+            this.fileSizeSaveLabel.Name = "fileSizeSaveLabel";
+            this.fileSizeSaveLabel.Size = new System.Drawing.Size(91, 19);
+            this.fileSizeSaveLabel.TabIndex = 22;
+            this.fileSizeSaveLabel.Text = "Saved: 0.0 B";
+            this.toolTip.SetToolTip(this.fileSizeSaveLabel, "Total filesize saved");
+            // 
+            // threadStatsLabel
+            // 
+            this.threadStatsLabel.Location = new System.Drawing.Point(422, 64);
+            this.threadStatsLabel.Name = "threadStatsLabel";
+            this.threadStatsLabel.Size = new System.Drawing.Size(91, 19);
+            this.threadStatsLabel.TabIndex = 23;
+            this.threadStatsLabel.Text = "Threads: 0/0";
+            this.toolTip.SetToolTip(this.threadStatsLabel, "No threads running");
+            // 
+            // missingTexturesTab
+            // 
+            this.missingTexturesTab.Controls.Add(this.totalLabel);
+            this.missingTexturesTab.Controls.Add(this.totalStats);
+            this.missingTexturesTab.Controls.Add(this.missingLabel);
+            this.missingTexturesTab.Controls.Add(this.includeRealmsMT);
+            this.missingTexturesTab.Controls.Add(this.missingTextures);
+            this.missingTexturesTab.Controls.Add(this.mtExportButton);
+            this.missingTexturesTab.Controls.Add(this.mtSearchButton);
+            this.missingTexturesTab.Controls.Add(this.missingTexturesTextBox);
+            this.missingTexturesTab.Location = new System.Drawing.Point(4, 22);
+            this.missingTexturesTab.Name = "missingTexturesTab";
+            this.missingTexturesTab.Padding = new System.Windows.Forms.Padding(3);
+            this.missingTexturesTab.Size = new System.Drawing.Size(516, 256);
+            this.missingTexturesTab.TabIndex = 0;
+            this.missingTexturesTab.Text = "Missing Textures";
+            this.missingTexturesTab.UseVisualStyleBackColor = true;
+            // 
+            // missingTexturesTextBox
+            // 
+            this.missingTexturesTextBox.Location = new System.Drawing.Point(0, 0);
+            this.missingTexturesTextBox.Name = "missingTexturesTextBox";
+            this.missingTexturesTextBox.ReadOnly = true;
+            this.missingTexturesTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.missingTexturesTextBox.Size = new System.Drawing.Size(413, 256);
+            this.missingTexturesTextBox.TabIndex = 1;
+            this.missingTexturesTextBox.Text = "";
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.missingTexturesTab);
+            this.tabControl.Controls.Add(this.unusedTexturesTab);
+            this.tabControl.Controls.Add(this.compressionTab);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Enabled = false;
+            this.tabControl.Location = new System.Drawing.Point(0, 99);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(524, 282);
+            this.tabControl.TabIndex = 3;
+            // 
+            // unusedTexturesTab
+            // 
+            this.unusedTexturesTab.Controls.Add(this.unusedLabel);
+            this.unusedTexturesTab.Controls.Add(this.includeRealmsUT);
+            this.unusedTexturesTab.Controls.Add(this.unusedStats);
+            this.unusedTexturesTab.Controls.Add(this.exportButtonUT);
+            this.unusedTexturesTab.Controls.Add(this.searchButtonUT);
+            this.unusedTexturesTab.Controls.Add(this.unusedTexturesTextBox);
+            this.unusedTexturesTab.Location = new System.Drawing.Point(4, 22);
+            this.unusedTexturesTab.Name = "unusedTexturesTab";
+            this.unusedTexturesTab.Padding = new System.Windows.Forms.Padding(3);
+            this.unusedTexturesTab.Size = new System.Drawing.Size(516, 256);
+            this.unusedTexturesTab.TabIndex = 1;
+            this.unusedTexturesTab.Text = "Unused Textures";
+            this.unusedTexturesTab.UseVisualStyleBackColor = true;
+            // 
             // unusedTexturesTextBox
             // 
             this.unusedTexturesTextBox.Location = new System.Drawing.Point(0, 0);
@@ -428,6 +572,44 @@ namespace ResourcePackUtils
             this.unusedTexturesTextBox.Size = new System.Drawing.Size(412, 256);
             this.unusedTexturesTextBox.TabIndex = 7;
             this.unusedTexturesTextBox.Text = "";
+            // 
+            // compressionTab
+            // 
+            this.compressionTab.Controls.Add(this.threadStatsLabel);
+            this.compressionTab.Controls.Add(this.fileSizeSaveLabel);
+            this.compressionTab.Controls.Add(this.compLevelLabel);
+            this.compressionTab.Controls.Add(this.compLevel);
+            this.compressionTab.Controls.Add(this.compConfLabel);
+            this.compressionTab.Controls.Add(this.threadCount);
+            this.compressionTab.Controls.Add(this.threadLabel);
+            this.compressionTab.Controls.Add(this.compStatsLabel);
+            this.compressionTab.Controls.Add(this.compressBasicStats);
+            this.compressionTab.Controls.Add(this.compressButton);
+            this.compressionTab.Controls.Add(this.compressTextBox);
+            this.compressionTab.Location = new System.Drawing.Point(4, 22);
+            this.compressionTab.Name = "compressionTab";
+            this.compressionTab.Padding = new System.Windows.Forms.Padding(3);
+            this.compressionTab.Size = new System.Drawing.Size(516, 256);
+            this.compressionTab.TabIndex = 2;
+            this.compressionTab.Text = "Compress Textures";
+            this.compressionTab.UseVisualStyleBackColor = true;
+            // 
+            // compressTextBox
+            // 
+            this.compressTextBox.Location = new System.Drawing.Point(0, 0);
+            this.compressTextBox.Name = "compressTextBox";
+            this.compressTextBox.ReadOnly = true;
+            this.compressTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.compressTextBox.Size = new System.Drawing.Size(412, 256);
+            this.compressTextBox.TabIndex = 13;
+            this.compressTextBox.Text = "";
+            // 
+            // exportFileListToolStripMenuItem
+            // 
+            this.exportFileListToolStripMenuItem.Name = "exportFileListToolStripMenuItem";
+            this.exportFileListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportFileListToolStripMenuItem.Text = "Export File List";
+            this.exportFileListToolStripMenuItem.Click += new System.EventHandler(this.exportFileListToolStripMenuItem_Click);
             // 
             // ResourcePackUtils
             // 
@@ -449,11 +631,15 @@ namespace ResourcePackUtils
             this.menuStrip.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.threadCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLevel)).EndInit();
             this.missingTexturesTab.ResumeLayout(false);
             this.missingTexturesTab.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.unusedTexturesTab.ResumeLayout(false);
             this.unusedTexturesTab.PerformLayout();
+            this.compressionTab.ResumeLayout(false);
+            this.compressionTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,7 +663,7 @@ namespace ResourcePackUtils
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem changeMultiMCPathToolStripMenuItem;
         private System.Windows.Forms.TabPage missingTexturesTab;
-        private System.Windows.Forms.CheckBox includeRealms;
+        private System.Windows.Forms.CheckBox includeRealmsMT;
         private System.Windows.Forms.Label missingTextures;
         private System.Windows.Forms.Button mtExportButton;
         private System.Windows.Forms.Button mtSearchButton;
@@ -495,6 +681,19 @@ namespace ResourcePackUtils
         private System.Windows.Forms.Button exportButtonUT;
         private System.Windows.Forms.Button searchButtonUT;
         private System.Windows.Forms.RichTextBox unusedTexturesTextBox;
+        private System.Windows.Forms.TabPage compressionTab;
+        private System.Windows.Forms.Label compStatsLabel;
+        private System.Windows.Forms.Label compressBasicStats;
+        private System.Windows.Forms.Button compressButton;
+        private System.Windows.Forms.RichTextBox compressTextBox;
+        private System.Windows.Forms.Label compConfLabel;
+        private System.Windows.Forms.NumericUpDown threadCount;
+        private System.Windows.Forms.Label threadLabel;
+        private System.Windows.Forms.Label compLevelLabel;
+        private System.Windows.Forms.NumericUpDown compLevel;
+        private System.Windows.Forms.Label fileSizeSaveLabel;
+        private System.Windows.Forms.Label threadStatsLabel;
+        private System.Windows.Forms.ToolStripMenuItem exportFileListToolStripMenuItem;
     }
 }
 

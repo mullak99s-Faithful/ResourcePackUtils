@@ -123,6 +123,7 @@
       <DependentUpon>SetMultiMCPath.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Utils\PackFileInfo.cs" />
     <EmbeddedResource Include="PackUtils.resx">
       <DependentUpon>PackUtils.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +166,7 @@
       <Name>SimpleSettingsManager</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.3.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.3.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

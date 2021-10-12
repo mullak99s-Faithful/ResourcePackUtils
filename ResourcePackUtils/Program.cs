@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ResourcePackUtils
 {
     static class Program
     {
-        private const string devAppendTag = "";
-        private const string betaAppendTag = "BETA_1";
+        private const string devAppendTag = "DEV_211012-1";
+        private const string betaAppendTag = "";
 
         private static string _path = string.Empty;
 
@@ -24,9 +21,7 @@ namespace ResourcePackUtils
             if (args.Length > 0)
             {
                 foreach (string arg in args)
-                {
                     if (Directory.Exists(arg)) _path = arg;
-                }
             }
 
             Application.EnableVisualStyles();

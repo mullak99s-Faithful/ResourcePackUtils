@@ -24,7 +24,6 @@ namespace ResourcePackUtils
             _ssm.AddString("multiMcPath", "", "Path to MultiMC exe", "Global");
 
             _ssm.AddBoolean("includeRealmsMT", true, "Include realms textures when searching for missing textures", "MissingTextures");
-
             _ssm.AddBoolean("includeRealmsUT", true, "Include realms textures when searching for unused textures", "UnusedTextures");
         }
 
